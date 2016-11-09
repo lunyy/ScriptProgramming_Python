@@ -4,6 +4,12 @@ CONST_ROWS = CONST_SIZE
 CONST_COLS = CONST_SIZE
 g_solution = [] # Save Solutions
 g_index = 0
+g_count = 0
+
+def main() :
+	global CONST_SIZE
+	print("N * Queen Puzzle")
+	setNext([])
 
 def checkQueenConflict(list,rows,cols) : # Cheek Queen Conflict.
 	for(list_rows,list_cols) in list :
@@ -40,6 +46,7 @@ def setNext(list) : # Event Handler
 
 def printSolutions() : # print
 	global g_index
+	global g_count
 	os.system("cls")
 	k = 0
 	for i in range(0,CONST_ROWS) :
@@ -51,11 +58,8 @@ def printSolutions() : # print
 				print(" ", end = " |")
 		print("")
 	g_index = g_index + 1
+	print("Num of Solutions : ",g_count)
 	a = input()
-
-def main() :
-	global CONST_SIZE
-	print("N * Queen Puzzle")
-	setNext([])
+	g_count = g_count + 1
 	
 main()

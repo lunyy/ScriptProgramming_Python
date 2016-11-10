@@ -15,7 +15,8 @@ def main():
 	
 
 def init(list): # open all 
-	return list[True for _ in range(0,100)]
+	list  = [True for _ in range(0,100)]
+	return list
 
 def close(list): # close cabinet index multiples of 2
 	for i in range(2,100,2):
@@ -26,3 +27,5 @@ def reverse(list,num): # close cabinet index multibles of num
 	for i in range(num,100,num):
 		list[i] = not list[i]
 	return list
+	
+main()

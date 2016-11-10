@@ -4,7 +4,7 @@ CONST_ROWS = CONST_SIZE
 CONST_COLS = CONST_SIZE
 g_solution = [] # Save Solutions
 g_index = 0
-g_count = 0
+g_count = 1
 
 def main() :
 	global CONST_SIZE
@@ -59,7 +59,6 @@ def printSolutions() : # print
 		print("")
 	g_index = g_index + 1
 	print("Num of Solutions : ",g_count)
-	a = input()
 	g_count = g_count + 1
 	
 main()

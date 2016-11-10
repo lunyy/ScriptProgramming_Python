@@ -18,7 +18,7 @@ def count(string): # count numbers
 				count[j] = count[j] + 1
 				break
 	for i in range(0,10):
-		outputstr = str(i) + " - " + str(count[i]) + "times were counted" # make string
+		outputstr = str(i) + " - " + str(count[i]) + "	times were counted" # make string
 		list.append(outputstr) # input string to list
 		
 	return list

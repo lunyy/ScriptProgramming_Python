@@ -2,26 +2,18 @@ import random
 
 def main():
 	print("Enter Rows : ")
-	#rows = eval(input())
-	rows = 6
+	rows = eval(input())
 	print("Enter Cols : ")
-	#cols = eval(input())
-	cols = 7
-
-	mylist = list()
-	#for i in range (0,rows) :
-	#	mylist.append([random.randint(0,9) for _ in range(0,cols)])
-	mylist.append([0,1,0,3,1,6,1])
-	mylist.append([0,1,6,8,6,0,1])
-	mylist.append([5,6,2,1,8,2,9])
-	mylist.append([6,5,6,1,1,9,1])
-	mylist.append([1,3,6,1,4,0,7])
-	mylist.append([3,3,3,3,4,0,7])
+	cols = eval(input())
+	print("Enter Matrix: ")
+	mystr = input()
+	alist = mystr.split()
+	mylist = []
+	for i in range(0,rows * cols,cols) :
+		mylist.append([eval(alist[x]) for x in range(i,i+cols)])
+	# User Input
 	print(isConsecutiveFour(mylist))
 	print("")
-
-
-
 
 def isConsecutiveFour(values):
 	rows = len(values)
@@ -45,6 +37,7 @@ def isConsecutiveFour(values):
 					break
 			if horizMultTarget == 4:
 				return True
+				# 수평 성분 검사
 			for k in range(0,4):
 				if i + 3 < cols :
 					if values[i][j] == values[i+k][j] :
@@ -56,6 +49,7 @@ def isConsecutiveFour(values):
 					break
 			if verticMultTarget == 4:
 				return True
+				# 수직 성분 검사
 			for k in range(0,4):
 				if i + 3 < rows and j - 3 >= 0:
 					if values[i][j] == values[i+k][j-k] :
@@ -67,6 +61,7 @@ def isConsecutiveFour(values):
 					break
 			if diagonMultTarget == 4:
 				return True
+				# 좌측 하단 대각성분 검사
 			for k in range(0,4):
 				if i + 3 < rows and j + 3 < cols:
 					if values[i][j] == values[i+k][j+k] :
@@ -78,6 +73,7 @@ def isConsecutiveFour(values):
 					break
 			if diagonMultTargetRev == 4:
 				return True
+				#우측 하단 대각성분 검사.
 	return False
 
 
